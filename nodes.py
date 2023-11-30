@@ -134,12 +134,12 @@ def nodeAlignment(graphx, graphy):
                             intrap[0] = intrap[0] + simRes
                             intrap[1] = intrap[1] + 1
 
-                if intrap[1] != 0:
-                        if maxC[1] == 0:
-                            maxC = intrap
-                            
-                        elif intrap[0]/intrap[1] > maxC[0]/maxC[1]:
-                            maxC = intrap
+                    if intrap[1] != 0:
+                            if maxC[1] == 0:
+                                maxC = intrap
+                                
+                            elif intrap[0]/intrap[1] > maxC[0]/maxC[1]:
+                                maxC = intrap
 
 
 
@@ -213,6 +213,13 @@ def nodeAlignment(graphx, graphy):
                     maxC = intrap
 
 
+    testMatr = [[0 for x in range(len(graphx)+1)] for y in range(len(graphy)+1)]
+
+    for i in range(1, len(graphx) + 1):
+        for j in range(1, len(graphy) + 1):
+            testMatr[i][j] = matrix[i][j][0]/matrix[i][j][1]
+    
+    
     result = [0,0,0,0]
 
 
@@ -262,9 +269,9 @@ if __name__ == "__main__":
 
 # Gen Test
 
-    # graphx = [11,14,15,16,17,18]
+    graphx = [11,14,15,16,17,18]
 
-    # graphy = [12,13,14,15,17,18]
+    graphy = [12,13,14,15,17,18]
     
     # graphx = [11, 14, 15]
     # graphy = [12, 13, 15]
@@ -275,9 +282,11 @@ if __name__ == "__main__":
     
     # graphy = [11,12,13,14,15,16,17,18]
     
-    graphx = [4, 5, 6]
-    graphy = [4, 5, 6]
+    # # graphx = [4, 5, 6]
+    # graphy = [4, 5, 6]
 
+    # graphx = [10, 13, 14, 15]
+    # graphy = [11, 12, 13, 15]
 
     print(nodeAlignment(graphx, graphy))
     
