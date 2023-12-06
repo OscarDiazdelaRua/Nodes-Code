@@ -69,7 +69,7 @@ def nodeAlignment(graphx, graphy):
 
 # Empty 2d array:
 
-    matrix = [[[0,0,0,0] for x in range(len(graphx)+1)] for y in range(len(graphy)+1)]
+    matrix = [[[0,0,0,0] for y in range(len(graphy)+1)] for x in range(len(graphx)+1)]
 
     # initialize col and row
 
@@ -213,7 +213,7 @@ def nodeAlignment(graphx, graphy):
                     maxC = intrap
 
 
-    testMatr = [[0 for x in range(len(graphx)+1)] for y in range(len(graphy)+1)]
+    testMatr = [[[0,0,0,0] for y in range(len(graphy)+1)] for x in range(len(graphx)+1)]
 
     for i in range(1, len(graphx) + 1):
         for j in range(1, len(graphy) + 1):
@@ -269,14 +269,19 @@ if __name__ == "__main__":
 
 # Gen Test
 
-    graphx = [11,14,15,16,17,18]
+    # graphx = [11,14,15,16,17,18]
 
-    graphy = [12,13,14,15,17,18]
+    # graphy = [12,13,14,15,17,18]
     
-    # graphx = [11, 14, 15]
-    # graphy = [12, 13, 15]
+    graphx = [5, 6, 8]
+    graphy = [5, 6, 7, 8]
 
 # Perfect Alignment
+
+
+    # graphx = [11,13]
+    
+    # graphy = [11,12,13]
 
     # graphx = [11,12,13,14,15,16,17,18]
     
